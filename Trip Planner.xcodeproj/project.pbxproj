@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -14,9 +14,22 @@
 		9025C2AD25E0119400D1A964 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9025C2AC25E0119400D1A964 /* Assets.xcassets */; };
 		9025C2B025E0119400D1A964 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9025C2AF25E0119400D1A964 /* Preview Assets.xcassets */; };
 		9025C2B325E0119400D1A964 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9025C2B125E0119400D1A964 /* LaunchScreen.storyboard */; };
+		9025C2BD25E015F400D1A964 /* TripsData-pl-PL.json in Resources */ = {isa = PBXBuildFile; fileRef = 9025C2BC25E015F400D1A964 /* TripsData-pl-PL.json */; };
+		9025C2C225E0162B00D1A964 /* Trip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9025C2C125E0162B00D1A964 /* Trip.swift */; };
+		9025C2CF25E0190100D1A964 /* MainView-TripsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9025C2CE25E0190100D1A964 /* MainView-TripsList.swift */; };
+		9025C2D425E0191F00D1A964 /* TripInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9025C2D325E0191F00D1A964 /* TripInfo.swift */; };
+		9025C2D825E02AB200D1A964 /* TripsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9025C2D725E02AB200D1A964 /* TripsList.swift */; };
+		9025C2DB25E045AA00D1A964 /* TripDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9025C2DA25E045AA00D1A964 /* TripDetails.swift */; };
+		903B0AFB25E7C46C0083CEC0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 903B0AFA25E7C46C0083CEC0 /* GoogleService-Info.plist */; };
+		903B0B5325E97B000083CEC0 /* TripRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 903B0B5225E97B000083CEC0 /* TripRepository.swift */; };
+		903B0B5825E97BA70083CEC0 /* TripsListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 903B0B5725E97BA70083CEC0 /* TripsListViewModel.swift */; };
+		9044F26525E6BF6B00911CEA /* NewTrip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9044F26425E6BF6B00911CEA /* NewTrip.swift */; };
+		FDAF7E7F397D7AB058D7CC62 /* Pods_Trip_Planner.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD5A16948394A28812FDF2B2 /* Pods_Trip_Planner.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		41BCF1CE0A9737125CB7B45E /* Pods-Trip Planner.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Trip Planner.debug.xcconfig"; path = "Target Support Files/Pods-Trip Planner/Pods-Trip Planner.debug.xcconfig"; sourceTree = "<group>"; };
+		6BB9B7D101DD397327B5F70E /* Pods-Trip Planner.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Trip Planner.release.xcconfig"; path = "Target Support Files/Pods-Trip Planner/Pods-Trip Planner.release.xcconfig"; sourceTree = "<group>"; };
 		9025C2A025E0119100D1A964 /* Trip Planner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Trip Planner.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9025C2A325E0119100D1A964 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9025C2A525E0119100D1A964 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -26,6 +39,17 @@
 		9025C2AF25E0119400D1A964 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		9025C2B225E0119400D1A964 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9025C2B425E0119400D1A964 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9025C2BC25E015F400D1A964 /* TripsData-pl-PL.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "TripsData-pl-PL.json"; sourceTree = "<group>"; };
+		9025C2C125E0162B00D1A964 /* Trip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Trip.swift; sourceTree = "<group>"; };
+		9025C2CE25E0190100D1A964 /* MainView-TripsList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MainView-TripsList.swift"; sourceTree = "<group>"; };
+		9025C2D325E0191F00D1A964 /* TripInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripInfo.swift; sourceTree = "<group>"; };
+		9025C2D725E02AB200D1A964 /* TripsList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripsList.swift; sourceTree = "<group>"; };
+		9025C2DA25E045AA00D1A964 /* TripDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripDetails.swift; sourceTree = "<group>"; };
+		903B0AFA25E7C46C0083CEC0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		903B0B5225E97B000083CEC0 /* TripRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripRepository.swift; sourceTree = "<group>"; };
+		903B0B5725E97BA70083CEC0 /* TripsListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripsListViewModel.swift; sourceTree = "<group>"; };
+		9044F26425E6BF6B00911CEA /* NewTrip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTrip.swift; sourceTree = "<group>"; };
+		DD5A16948394A28812FDF2B2 /* Pods_Trip_Planner.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Trip_Planner.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,17 +57,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FDAF7E7F397D7AB058D7CC62 /* Pods_Trip_Planner.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		058B049E9F1E08B50B9C56D2 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DD5A16948394A28812FDF2B2 /* Pods_Trip_Planner.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		19324400AD7CDFBCB5C27C21 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				41BCF1CE0A9737125CB7B45E /* Pods-Trip Planner.debug.xcconfig */,
+				6BB9B7D101DD397327B5F70E /* Pods-Trip Planner.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		9025C29725E0119100D1A964 = {
 			isa = PBXGroup;
 			children = (
 				9025C2A225E0119100D1A964 /* Trip Planner */,
 				9025C2A125E0119100D1A964 /* Products */,
+				19324400AD7CDFBCB5C27C21 /* Pods */,
+				058B049E9F1E08B50B9C56D2 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -58,11 +102,15 @@
 		9025C2A225E0119100D1A964 /* Trip Planner */ = {
 			isa = PBXGroup;
 			children = (
+				903B0B5025E979DB0083CEC0 /* Repositories */,
+				903B0AFA25E7C46C0083CEC0 /* GoogleService-Info.plist */,
+				9025C2C925E0186D00D1A964 /* Views */,
+				9025C2C525E017AA00D1A964 /* ViewModels */,
+				9025C2C025E0161800D1A964 /* Models */,
+				9025C2BB25E0142E00D1A964 /* Data */,
 				9025C2A325E0119100D1A964 /* AppDelegate.swift */,
 				9025C2A525E0119100D1A964 /* SceneDelegate.swift */,
-				9025C2A725E0119100D1A964 /* ContentView.swift */,
 				9025C2AC25E0119400D1A964 /* Assets.xcassets */,
-				9025C2B125E0119400D1A964 /* LaunchScreen.storyboard */,
 				9025C2B425E0119400D1A964 /* Info.plist */,
 				9025C2A925E0119100D1A964 /* Trip_Planner.xcdatamodeld */,
 				9025C2AE25E0119400D1A964 /* Preview Content */,
@@ -78,6 +126,60 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		9025C2BB25E0142E00D1A964 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				9025C2BC25E015F400D1A964 /* TripsData-pl-PL.json */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		9025C2C025E0161800D1A964 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				9025C2C125E0162B00D1A964 /* Trip.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		9025C2C525E017AA00D1A964 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				903B0B5725E97BA70083CEC0 /* TripsListViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		9025C2C925E0186D00D1A964 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				9025C2D225E0190800D1A964 /* Trips */,
+				9025C2A725E0119100D1A964 /* ContentView.swift */,
+				9025C2B125E0119400D1A964 /* LaunchScreen.storyboard */,
+				9025C2CE25E0190100D1A964 /* MainView-TripsList.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		9025C2D225E0190800D1A964 /* Trips */ = {
+			isa = PBXGroup;
+			children = (
+				9025C2D325E0191F00D1A964 /* TripInfo.swift */,
+				9025C2D725E02AB200D1A964 /* TripsList.swift */,
+				9025C2DA25E045AA00D1A964 /* TripDetails.swift */,
+				9044F26425E6BF6B00911CEA /* NewTrip.swift */,
+			);
+			path = Trips;
+			sourceTree = "<group>";
+		};
+		903B0B5025E979DB0083CEC0 /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				903B0B5225E97B000083CEC0 /* TripRepository.swift */,
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -85,9 +187,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9025C2B725E0119400D1A964 /* Build configuration list for PBXNativeTarget "Trip Planner" */;
 			buildPhases = (
+				4DA85B4FE537B4A3A9BF33E7 /* [CP] Check Pods Manifest.lock */,
 				9025C29C25E0119100D1A964 /* Sources */,
 				9025C29D25E0119100D1A964 /* Frameworks */,
 				9025C29E25E0119100D1A964 /* Resources */,
+				CB2C01B3F05588357656D598 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -137,19 +241,71 @@
 			files = (
 				9025C2B325E0119400D1A964 /* LaunchScreen.storyboard in Resources */,
 				9025C2B025E0119400D1A964 /* Preview Assets.xcassets in Resources */,
+				9025C2BD25E015F400D1A964 /* TripsData-pl-PL.json in Resources */,
 				9025C2AD25E0119400D1A964 /* Assets.xcassets in Resources */,
+				903B0AFB25E7C46C0083CEC0 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		4DA85B4FE537B4A3A9BF33E7 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Trip Planner-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CB2C01B3F05588357656D598 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Trip Planner/Pods-Trip Planner-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Trip Planner/Pods-Trip Planner-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Trip Planner/Pods-Trip Planner-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		9025C29C25E0119100D1A964 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9025C2C225E0162B00D1A964 /* Trip.swift in Sources */,
+				9025C2DB25E045AA00D1A964 /* TripDetails.swift in Sources */,
+				903B0B5325E97B000083CEC0 /* TripRepository.swift in Sources */,
 				9025C2A425E0119100D1A964 /* AppDelegate.swift in Sources */,
+				9025C2CF25E0190100D1A964 /* MainView-TripsList.swift in Sources */,
+				9025C2D425E0191F00D1A964 /* TripInfo.swift in Sources */,
+				9025C2D825E02AB200D1A964 /* TripsList.swift in Sources */,
+				9044F26525E6BF6B00911CEA /* NewTrip.swift in Sources */,
 				9025C2A625E0119100D1A964 /* SceneDelegate.swift in Sources */,
+				903B0B5825E97BA70083CEC0 /* TripsListViewModel.swift in Sources */,
 				9025C2A825E0119100D1A964 /* ContentView.swift in Sources */,
 				9025C2AB25E0119100D1A964 /* Trip_Planner.xcdatamodeld in Sources */,
 			);
@@ -287,6 +443,7 @@
 		};
 		9025C2B825E0119400D1A964 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 41BCF1CE0A9737125CB7B45E /* Pods-Trip Planner.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -308,6 +465,7 @@
 		};
 		9025C2B925E0119400D1A964 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6BB9B7D101DD397327B5F70E /* Pods-Trip Planner.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

@@ -1,0 +1,21 @@
+{
+  "images" : [
+    {
+      "filename" : "earth-drawing-clip-art-earth-493cbfc85f3631870dfc4ee3b825fef2.png",
+      "idiom" : "universal",
+      "scale" : "1x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "2x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "3x"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}
