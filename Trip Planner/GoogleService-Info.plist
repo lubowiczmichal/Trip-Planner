@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>261458914183-odj844qj1hd3a2ip0m0u21fl6ufc10hu.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.261458914183-odj844qj1hd3a2ip0m0u21fl6ufc10hu</string>
+	<key>API_KEY</key>
+	<string>AIzaSyDOiUM6wQJlA-OZxa24tq6izAA8WQHzcSg</string>
+	<key>GCM_SENDER_ID</key>
+	<string>261458914183</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.michal.Trip-Planner</string>
+	<key>PROJECT_ID</key>
+	<string>trip-planner-c4add</string>
+	<key>STORAGE_BUCKET</key>
+	<string>trip-planner-c4add.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:261458914183:ios:21a3125855727992c5c122</string>
+</dict>
+</plist>
