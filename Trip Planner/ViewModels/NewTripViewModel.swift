@@ -39,7 +39,8 @@ class NewTripViewModel: ObservableObject{
             self.downloadedImage = UIImage(data: data!)!
           }
         }
-        return Image(uiImage: self.downloadedImage)
+        //return Image(uiImage: self.downloadedImage)
+        return Image("paris")
     }
     
     func deletePhoto(name: String){
@@ -51,7 +52,6 @@ class NewTripViewModel: ObservableObject{
             print("done")
           }
         }
-            
     }
-    
 }
+

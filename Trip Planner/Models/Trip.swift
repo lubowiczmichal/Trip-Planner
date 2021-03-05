@@ -17,8 +17,9 @@ struct Trip: Hashable, Codable, Identifiable {
     var name: String
     var description: String
     
-    var imageURL: String
+    var imageName: String
     
+   
     var dateStart: Date
     var dateEnd: Date
     
@@ -29,20 +30,14 @@ struct Trip: Hashable, Codable, Identifiable {
         dateEnd.toString()
     }
     
+    var itemsList: [String]
+    var activeItemsList: [Bool]
+    
     var durration: Int{
         Calendar.current.dateComponents([.day], from: dateStart, to: dateEnd).day ?? 0
     }
     var daysToStart: Int{
         Calendar.current.dateComponents([.day], from: Date(), to: dateStart).day ?? 0
-    }
-    
-    func addItem() {
-        let db = Firestore.firestore()
-        do {
-            try db.collection("users/user1/trips").addDocument(from: self)
-        } catch let error {
-            print("Error writing city to Firestore: \(error)")
-        }
     }
     
 }
@@ -56,11 +51,10 @@ extension Date {
         self.init(timeInterval:0, since:date)
     }
 }
-
 extension Date{
     func toString()->String{
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "dd-MM-yyyy"
-        return dateFormatter.string(from: self)
+        return dateFormatter.string(from: Date())
     }
 }

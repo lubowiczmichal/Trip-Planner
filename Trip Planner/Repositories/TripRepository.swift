@@ -19,6 +19,14 @@ class TripRepository: ObservableObject{
         loadData()
     }
     
+    func addItem(trip: Trip) {
+        do {
+            try db.collection("users/user1/trips").document(UUID.init().uuidString).setData(from: trip)
+        } catch let error {
+            print("Error writing city to Firestore: \(error)")
+        }
+    }
+    
     func loadData(){
         db.collection("users/user1/trips").addSnapshotListener() { (querySnapshot, error) in
             if let querySnapshot = querySnapshot {
@@ -36,5 +44,14 @@ class TripRepository: ObservableObject{
         }
     }
     
+    func deleteDocument(trip: Trip){
+        db.collection("users/user1/trips").document(trip.id!).delete() { err in
+            if let err = err {
+                print("Error removing document: \(err)")
+            } else {
+                print("Document successfully removed!")
+            }
+        }
+    }
+    
 }
-

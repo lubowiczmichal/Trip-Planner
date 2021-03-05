@@ -11,8 +11,11 @@ struct TripsList: View {
     
     @ObservedObject var tripsData = TripRepository()
     
-    init(){
-        tripsData = TripRepository()
+    @Environment(\.colorScheme) var colorScheme: ColorScheme
+        init() {
+            UITableView.appearance().separatorStyle = .none
+            UITableViewCell.appearance().backgroundColor = UIColor.systemBackground
+            UITableView.appearance().backgroundColor = UIColor.systemBackground
     }
     
     var body: some View {

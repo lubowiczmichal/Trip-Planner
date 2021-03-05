@@ -17,6 +17,7 @@ struct ImageURL: View {
         var state = LoadState.loading
 
         init(name: String) {
+            // for database 1 for next databases url must be changed due to limits of free account
             let url = "https://firebasestorage.googleapis.com/v0/b/trip-planner-c4add.appspot.com/o/user1%2F\(name).jpg?alt=media&token=fcc1f93e-3509-4e51-acb3-88eae0f35dac"
             let parsedURL = URL(string: url)
             URLSession.shared.dataTask(with: parsedURL!) { data, response, error in

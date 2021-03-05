@@ -10,17 +10,21 @@ import SwiftUI
 struct TripDetails: View {
     
     var trip:Trip
+    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     @ObservedObject var upload = NewTripViewModel()
-    
+    @ObservedObject var tripsData = TripRepository()
+    @State private var showingAlert = false
+    @State private var deleted = false
     var body: some View {
         VStack{
             ZStack{
-                ImageURL(name: trip.imageURL)
+                upload.downloadPhoto(name: trip.imageName)
+                    .resizable()
                     .aspectRatio(contentMode: .fill)
                     .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.width)
                     .clipped()
                 VStack{
-                    Spacer(minLength: UIScreen.main.bounds.width*0.8)
+                    Spacer()
                     HStack{
                         ZStack{
                             Rectangle()
@@ -37,11 +41,6 @@ struct TripDetails: View {
                         }
                         Spacer()
                     }
-                    Button(action: {
-                        upload.deletePhoto(name: trip.imageURL)
-                    }) {
-                        Text("delete")
-                    }
                 }
                 .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height * 0.35)
             }
@@ -50,13 +49,29 @@ struct TripDetails: View {
             }
         }
         .edgesIgnoringSafeArea(.all)
-        .statusBar(hidden: true)
+        .navigationBarTitle("", displayMode: .inline)
+        .toolbar {
+            ToolbarItem(placement: .navigationBarTrailing){
+                Button("Tap to show alert") {
+                    showingAlert = true
+                }
+            }
+        }
+        .alert(isPresented: $showingAlert) {
+            Alert(title: Text("Are you sure you want to delete this?"),
+                message: Text("There is no undo"),
+                primaryButton: .cancel(Text("Anuluj")),
+                secondaryButton: .default(Text("Delete"), action: {
+                    tripsData.deleteDocument(trip: trip)
+                    presentationMode.wrappedValue.dismiss()
+                }))
+        }
     }
 }
 
 struct TripDetails_Previews: PreviewProvider {
     static var previews: some View {
-        TripDetails(trip: Trip(id: "1", name: "Polska", description: "Polsk", imageURL: "https://meteor-turystyka.pl/images/places/0/36.jpg", dateStart: Date(), dateEnd: Date()))
+        TripDetails(trip: TripRepository().trips[0])
     }
 }
 

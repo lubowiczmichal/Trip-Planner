@@ -14,25 +14,14 @@ struct TripInfo: View {
     var trip: Trip
     var body: some View {
         HStack{
-            upload.downloadPhoto(name: trip.imageURL)
+            upload.downloadPhoto(name: trip.imageName)
                 .resizable()
-                .aspectRatio(contentMode: .fill)
-                .frame(width: 100, height: 100)
-                .clipped()
+                .frame(width: 100, height: 100, alignment: .center)
             VStack{
                 Text(trip.name)
-                    .font(.system(size: 15))
-                    .foregroundColor(Color.red)
                 Text(trip.description)
-                    .font(.system(size: 10))
                 Text(trip.dateStartString + " - " + trip.dateEndString)
-                    .font(.system(size: 10))
                 Text("To start \(trip.daysToStart) days")
-                    .font(.system(size: 10))
-            }
-            .onAppear(){
-                print(trip)
-                print(trip.dateStart)
             }
         }
     }
