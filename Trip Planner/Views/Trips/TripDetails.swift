@@ -10,15 +10,17 @@ import SwiftUI
 struct TripDetails: View {
     
     var trip:Trip
+    @ObservedObject var upload = NewTripViewModel()
     
     var body: some View {
         VStack{
             ZStack{
-                Image(systemName: "pencil.circle.fill")
-                    .resizable()
-                    .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height * 0.35)
+                ImageURL(name: trip.imageURL)
+                    .aspectRatio(contentMode: .fill)
+                    .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.width)
+                    .clipped()
                 VStack{
-                    Spacer()
+                    Spacer(minLength: UIScreen.main.bounds.width*0.8)
                     HStack{
                         ZStack{
                             Rectangle()
@@ -35,6 +37,11 @@ struct TripDetails: View {
                         }
                         Spacer()
                     }
+                    Button(action: {
+                        upload.deletePhoto(name: trip.imageURL)
+                    }) {
+                        Text("delete")
+                    }
                 }
                 .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height * 0.35)
             }
@@ -49,7 +56,7 @@ struct TripDetails: View {
 
 struct TripDetails_Previews: PreviewProvider {
     static var previews: some View {
-        TripDetails(trip: TripRepository().trips[0])
+        TripDetails(trip: Trip(id: "1", name: "Polska", description: "Polsk", imageURL: "https://meteor-turystyka.pl/images/places/0/36.jpg", dateStart: Date(), dateEnd: Date()))
     }
 }
 

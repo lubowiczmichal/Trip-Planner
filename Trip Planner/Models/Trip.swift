@@ -17,9 +17,8 @@ struct Trip: Hashable, Codable, Identifiable {
     var name: String
     var description: String
     
-    var imageName: String
+    var imageURL: String
     
-   
     var dateStart: Date
     var dateEnd: Date
     
@@ -57,10 +56,11 @@ extension Date {
         self.init(timeInterval:0, since:date)
     }
 }
+
 extension Date{
     func toString()->String{
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "dd-MM-yyyy"
-        return dateFormatter.string(from: Date())
+        return dateFormatter.string(from: self)
     }
 }

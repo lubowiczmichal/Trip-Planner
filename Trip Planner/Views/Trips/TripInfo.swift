@@ -9,18 +9,30 @@ import SwiftUI
 
 struct TripInfo: View {
     
-    var trip: Trip
+    @ObservedObject var upload = NewTripViewModel()
     
+    var trip: Trip
     var body: some View {
         HStack{
-            Image(systemName: "pencil.circle.fill")
+            upload.downloadPhoto(name: trip.imageURL)
                 .resizable()
-                .frame(width: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, height: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                .aspectRatio(contentMode: .fill)
+                .frame(width: 100, height: 100)
+                .clipped()
             VStack{
                 Text(trip.name)
+                    .font(.system(size: 15))
+                    .foregroundColor(Color.red)
                 Text(trip.description)
+                    .font(.system(size: 10))
                 Text(trip.dateStartString + " - " + trip.dateEndString)
+                    .font(.system(size: 10))
                 Text("To start \(trip.daysToStart) days")
+                    .font(.system(size: 10))
+            }
+            .onAppear(){
+                print(trip)
+                print(trip.dateStart)
             }
         }
     }

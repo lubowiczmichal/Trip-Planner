@@ -10,6 +10,7 @@ import SwiftUI
 struct TripsList: View {
     
     @ObservedObject var tripsData = TripRepository()
+    
     init(){
         tripsData = TripRepository()
     }
@@ -19,30 +20,23 @@ struct TripsList: View {
             VStack{
                 List {
                     ForEach(tripsData.trips){trip in
-                        NavigationLink(destination: TripInfo(trip: trip)) {
+                        NavigationLink(destination: TripDetails(trip: trip)) {
                             TripInfo(trip: trip)
                         }
                     }
                     .listRowBackground(Color.clear)
                 }
                 .navigationTitle("Yours Trips")
-                HStack{
+                .toolbar {
                     NavigationLink(destination: NewTrip()) {
-                        Text("text")
-                            .background(Color.orange)
-                            .padding(10)
-                    }
-                    Button(action: {
-                        
-                    }) {
-                        Text("text")
-                            .background(Color.red)
-                            .padding(10)
+                        Text("Add new trip")
                     }
                 }
             }
 
         }
+
+
     }
 }
 

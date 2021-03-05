@@ -15,6 +15,15 @@ struct NewTrip: View {
     @State var dateStart: Date = Date()
     @State var dateEnd: Date = Date()
     @State var description: String = ""
+    @ObservedObject var upload = NewTripViewModel()
+    @ObservedObject var list = TripsListViewModel()
+    
+    @State private var image: Image?
+    @State private var showingImagePicker = false
+    @State private var inputImage: UIImage?
+    
+    @State private var imageURL: String = ""
+    
     var ref: DocumentReference!
     
     let db = Firestore.firestore()
@@ -32,15 +41,58 @@ struct NewTrip: View {
                 TextField("", text: $description)
                 //.dać opis na więcej lini
             }
+            ZStack{
+                Rectangle()
+                    .fill(Color.secondary)
+                if image != nil {
+                    image?
+                        .resizable()
+                        .scaledToFit()
+                }else{
+                    Text("Tap to select")
+                        .foregroundColor(.white)
+                        .background(Color.orange)
+                }
+            }
+            .onTapGesture {
+                self.showingImagePicker = true
+            }
+            .sheet(isPresented: $showingImagePicker, onDismiss: loadImage, content: {
+                ImagePicker(image: self.$inputImage)
+            })
             Button(action: {
-                let trip = Trip(name: name, description: description, imageName: "", dateStart: dateStart, dateEnd: dateEnd)
+                if imageURL == ""{
+                    imageURL = "wycieczka.jpg"
+                }
+                let trip = Trip(name: name, description: description, imageURL: imageURL, dateStart: dateStart, dateEnd: dateEnd)
                 trip.addItem()
             }) {
                 Text("Write")
                     .padding(10)
                     .background(Color.red)
             }
+            Button(action: {
+                let randomID = UUID.init().uuidString
+                upload.uploadPhoto(image: inputImage!, name: randomID)
+                imageURL = randomID
+            }) {
+                Text("upload")
+                    .padding(10)
+                    .background(Color.red)
+            }
+            Button(action: {
+                self.showingImagePicker = true
+            }) {
+                Text("download")
+                    .padding(10)
+                    .background(Color.red)
+            }
         }
+    }
+    
+    func loadImage(){
+        guard let inputImage = inputImage else { return }
+        image = Image(uiImage: inputImage)
     }
 }
 
