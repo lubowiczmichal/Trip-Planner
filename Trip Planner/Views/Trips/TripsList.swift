@@ -38,6 +38,9 @@ struct TripsList: View {
             }
 
         }
+        .onAppear(){
+            tripsData.loadData()
+        }
 
 
     }

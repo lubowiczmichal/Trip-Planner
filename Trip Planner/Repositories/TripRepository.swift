@@ -6,29 +6,28 @@
 //
 
 import Foundation
-import FirebaseFirestore
-import FirebaseFirestoreSwift
+import Firebase
 
 class TripRepository: ObservableObject{
     
-    let db = Firestore.firestore()
+    private var db = Firestore.firestore()
     
     @Published var trips = [Trip]()
-    
+
     init(){
         loadData()
     }
     
     func addItem(trip: Trip) {
         do {
-            try db.collection("users/user1/trips").document(UUID.init().uuidString).setData(from: trip)
+            let _ = try db.collection("a").addDocument(from: trip)
         } catch let error {
-            print("Error writing city to Firestore: \(error)")
+            print(error)
         }
     }
     
     func loadData(){
-        db.collection("users/user1/trips").addSnapshotListener() { (querySnapshot, error) in
+        db.collection("a").addSnapshotListener  { (querySnapshot, error) in
             if let querySnapshot = querySnapshot {
                 self.trips = querySnapshot.documents.compactMap { document in
                     do{
@@ -45,7 +44,7 @@ class TripRepository: ObservableObject{
     }
     
     func deleteDocument(trip: Trip){
-        db.collection("users/user1/trips").document(trip.id!).delete() { err in
+        db.collection("a").document(trip.id!).delete() { err in
             if let err = err {
                 print("Error removing document: \(err)")
             } else {

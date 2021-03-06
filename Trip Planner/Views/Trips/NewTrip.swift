@@ -21,7 +21,7 @@ struct NewTrip: View {
     @State private var newItem = ""
     @ObservedObject var upload = NewTripViewModel()
     @ObservedObject var list = TripsListViewModel()
-    @ObservedObject var repo = TripRepository()
+    @StateObject var repo = TripRepository()
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     @State private var image: Image?
     @State private var showingImagePicker = false
@@ -55,9 +55,6 @@ struct NewTrip: View {
                             }
                             
                         }
-                    }
-                    .onAppear(){
-                        print("WLONCZONE")
                     }
                     .onTapGesture {
                         self.showingImagePicker = true
