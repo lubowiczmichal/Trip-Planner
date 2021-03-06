@@ -9,17 +9,21 @@ import SwiftUI
 
 struct TripInfo: View {
     
-    @ObservedObject var upload = NewTripViewModel()
-    
+    @StateObject var repo = TripRepository()
+
     var trip: Trip
     var body: some View {
         HStack{
-            upload.downloadPhoto(name: trip.imageName)
+            Image(uiImage: repo.downloadedImage)
                 .resizable()
-                .frame(width: 100, height: 100, alignment: .center)
+                .aspectRatio(contentMode: .fill)
+                .frame(width: 100, height: 100)
+                .clipped()
+                .onAppear(){
+                    repo.downloadPhoto(name: trip.imageName)
+                }
             VStack{
                 Text(trip.name)
-                Text(trip.description)
                 Text(trip.dateStartString + " - " + trip.dateEndString)
                 Text("To start \(trip.daysToStart) days")
             }
@@ -29,6 +33,6 @@ struct TripInfo: View {
 
 struct TripInfo_Previews: PreviewProvider {
     static var previews: some View {
-        TripInfo(trip: TripRepository().trips[0])
+        TripInfo(trip: Trip(id: "A", name: "Wycieczka", description: "Bardzo fajna wycieczka", imageName: "", dateStart: Date(), dateEnd: Date(), itemsList: ["item1", "item2"], activeItemsList: [true, false]))
     }
 }

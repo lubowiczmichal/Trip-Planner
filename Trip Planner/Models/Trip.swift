@@ -18,8 +18,7 @@ struct Trip: Hashable, Codable, Identifiable {
     var description: String
     
     var imageName: String
-    
-   
+       
     var dateStart: Date
     var dateEnd: Date
     
@@ -39,7 +38,7 @@ struct Trip: Hashable, Codable, Identifiable {
     var daysToStart: Int{
         Calendar.current.dateComponents([.day], from: Date(), to: dateStart).day ?? 0
     }
-    
+     
 }
 
 extension Date {
@@ -55,6 +54,6 @@ extension Date{
     func toString()->String{
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "dd-MM-yyyy"
-        return dateFormatter.string(from: Date())
+        return dateFormatter.string(from: self)
     }
 }

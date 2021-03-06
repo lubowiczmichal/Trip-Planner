@@ -19,9 +19,9 @@ struct NewTrip: View {
     @State var activeItemsList: [Bool] = []
     @State private var rootWord = ""
     @State private var newItem = ""
-    @ObservedObject var upload = NewTripViewModel()
-    @ObservedObject var list = TripsListViewModel()
-    @StateObject var repo = TripRepository()
+    
+    @ObservedObject var repo = TripRepository()
+    
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     @State private var image: Image?
     @State private var showingImagePicker = false
@@ -29,7 +29,7 @@ struct NewTrip: View {
     @State private var showingAlert = false
     
     @State private var imageName: String = ""
-    
+    @State private var toPackClicked: Bool = false
     
     @State private var imageURL: String = ""
     
@@ -42,16 +42,18 @@ struct NewTrip: View {
                         if image != nil {
                             image?
                                 .resizable()
-                                .scaledToFill()
+                                .aspectRatio(contentMode: .fill)
                                 .frame(width: 250, height: 250)
+                                .clipped()
+
                         }else{
                             ZStack{
                                 Rectangle()
                                     .fill(Color.secondary)
-                                    .frame(width: 100, height: 100)
-                                Text("Tap to select")
+                                    .frame(width: 150, height: 100)
+                                    .cornerRadius(5)
+                                Text("Tap to select photo")
                                     .foregroundColor(.white)
-                                    .background(Color.orange)
                             }
                             
                         }
@@ -64,6 +66,7 @@ struct NewTrip: View {
                     })
                     HStack{
                         Text("Nazwa")
+                        Spacer()
                         TextField("", text: $name, onEditingChanged: { (editingChanged) in
                             if editingChanged {
                                 self.textFieldActive = true
@@ -71,6 +74,7 @@ struct NewTrip: View {
                                 self.textFieldActive = false
                             }
                         })
+                        .frame(width: UIScreen.main.bounds.width*0.75, height: 30)
                         .overlay(
                             RoundedRectangle(cornerRadius: 5)
                                 .stroke(Color.gray, lineWidth: 1)
@@ -106,73 +110,98 @@ struct NewTrip: View {
                             RoundedRectangle(cornerRadius: 5)
                                 .stroke(Color.gray, lineWidth: 1)
                         )
-                    Button(action: {
-                        if(name==""){
-                            showingAlert = true
-                        } else {
-                            if imageName == ""{
-                                imageName = "wycieczka"
-                            }
-                            let trip = Trip(name: name, description: description, imageName: imageName, dateStart: dateStart, dateEnd: dateEnd, itemsList: itemsList, activeItemsList: activeItemsList)
-                            repo.addItem(trip: trip)
-                            presentationMode.wrappedValue.dismiss()
+                    if(!toPackClicked){
+                        HStack{
+                            Text("Do spakowania")
+                                .padding(10)
+                            Spacer()
+                            Button(action: {
+                                toPackClicked.toggle()
+                            }, label: {
+                                Image(systemName: "plus.circle")
+                                    .padding(10)
+                            })
                         }
-                    }) {
-                        Text("Write")
+                    }
+                    else{
+                        HStack{
+                            TextField("Add item", text: $newItem,onEditingChanged: { (editingChanged) in
+                                if editingChanged {
+                                    self.textFieldActive = true
+                                } else {
+                                    self.textFieldActive = false
+                                }
+                            }, onCommit: addNewItem)
+                                .frame(width: UIScreen.main.bounds.width*0.75, height: 30)
+                                .overlay(
+                                    RoundedRectangle(cornerRadius: 5)
+                                        .stroke(Color.gray, lineWidth: 1)
+                                )
                             .padding(10)
-                            .background(Color.red)
-                    }
-                    
-                    .alert(isPresented: $showingAlert) {
-                        Alert(title: Text("Brak nazwy"),
-                              message: Text("Wprowadź nazwę"),
-                              dismissButton: .default(Text("OK")))
-                    }
-                    /*
-                    Button(action: {
-                        let randomID = UUID.init().uuidString
-                        upload.uploadPhoto(image: inputImage!, name: randomID)
-                        imageName = randomID
-                    }) {
-                        Text("upload")
-                            .padding(10)
-                            .background(Color.red)
-                    }
-     */
-                    TextField("Add item", text: $newItem,onEditingChanged: { (editingChanged) in
-                        if editingChanged {
-                            self.textFieldActive = true
-                        } else {
-                            self.textFieldActive = false
+                            Spacer()
+                            Button(action: {
+                                toPackClicked.toggle()
+                            }, label: {
+                                Image(systemName: "xmark.circle")
+                                    .padding(10)
+                            })
                         }
-                    }, onCommit: addNewItem)
-                    .overlay(
-                        RoundedRectangle(cornerRadius: 5)
-                            .stroke(Color.gray, lineWidth: 1)
-                    )
+                    }
                     ForEach(itemsList, id: \.self){ item in
                         HStack{
                             Button(action: {
                                 activeItemsList[itemsList.firstIndex(of: item)!].toggle()
                             }) {
                                 Image(systemName: activeItemsList[itemsList.firstIndex(of: item)!] ? "circle.fill" : "circle")
+                                    .padding(5)
                             }
                             Text(item)
                             Spacer()
                         }
                     }
-                    Spacer(minLength: 50)
+                    Spacer(minLength: 100)
                 }
             }
+            .toolbar {
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    HStack {
+                        Text("")
+                        Button("Save") {
+                            self.save()
+                        }
+                    }
+                }
+            }
+         .alert(isPresented: $showingAlert) {
+             Alert(title: Text("Brak nazwy"),
+                   message: Text("Wprowadź nazwę"),
+                   dismissButton: .default(Text("OK")))
         }
+    }
         
+    func save(){
+        if(image != nil){
+            let randomID = UUID.init().uuidString
+            repo.uploadPhoto(image: inputImage!, name: randomID)
+            imageName = randomID
+        }else{
+            imageName = "wycieczka"
+        }
+        if(name==""){
+            showingAlert = true
+        } else {
+            let trip = Trip(name: name, description: description, imageName: imageName, dateStart: dateStart, dateEnd: dateEnd, itemsList: itemsList, activeItemsList: activeItemsList)
+            repo.addItem(trip: trip)
+            presentationMode.wrappedValue.dismiss()
+        }
+    }
+    
         func addNewItem() {
             guard newItem.count > 0 else {
                 return
             }
-
-            itemsList.insert(newItem, at: 0)
-            activeItemsList.insert(false, at: 0)
+            itemsList.append(newItem)
+            activeItemsList.append(false)
             newItem = ""
         }
         

@@ -18,13 +18,11 @@
 		9025C2D425E0191F00D1A964 /* TripInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9025C2D325E0191F00D1A964 /* TripInfo.swift */; };
 		9025C2D825E02AB200D1A964 /* TripsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9025C2D725E02AB200D1A964 /* TripsList.swift */; };
 		9025C2DB25E045AA00D1A964 /* TripDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9025C2DA25E045AA00D1A964 /* TripDetails.swift */; };
-		903B0AFB25E7C46C0083CEC0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 903B0AFA25E7C46C0083CEC0 /* GoogleService-Info.plist */; };
 		903B0B5325E97B000083CEC0 /* TripRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 903B0B5225E97B000083CEC0 /* TripRepository.swift */; };
-		903B0B5825E97BA70083CEC0 /* TripsListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 903B0B5725E97BA70083CEC0 /* TripsListViewModel.swift */; };
 		9044F26525E6BF6B00911CEA /* NewTrip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9044F26425E6BF6B00911CEA /* NewTrip.swift */; };
-		9061402625EE4FDC00B5025B /* NewTripViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9061402525EE4FDC00B5025B /* NewTripViewModel.swift */; };
 		9061403F25EE9A3A00B5025B /* ImageURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9061403E25EE9A3A00B5025B /* ImageURL.swift */; };
 		9061404225EEA99900B5025B /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9061404125EEA99900B5025B /* ImagePicker.swift */; };
+		9098A65D25F3F9B000EAA7E2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9098A65C25F3F9B000EAA7E2 /* GoogleService-Info.plist */; };
 		FDAF7E7F397D7AB058D7CC62 /* Pods_Trip_Planner.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD5A16948394A28812FDF2B2 /* Pods_Trip_Planner.framework */; };
 /* End PBXBuildFile section */
 
@@ -44,13 +42,11 @@
 		9025C2D325E0191F00D1A964 /* TripInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripInfo.swift; sourceTree = "<group>"; };
 		9025C2D725E02AB200D1A964 /* TripsList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripsList.swift; sourceTree = "<group>"; };
 		9025C2DA25E045AA00D1A964 /* TripDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripDetails.swift; sourceTree = "<group>"; };
-		903B0AFA25E7C46C0083CEC0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		903B0B5225E97B000083CEC0 /* TripRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripRepository.swift; sourceTree = "<group>"; };
-		903B0B5725E97BA70083CEC0 /* TripsListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripsListViewModel.swift; sourceTree = "<group>"; };
 		9044F26425E6BF6B00911CEA /* NewTrip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTrip.swift; sourceTree = "<group>"; };
-		9061402525EE4FDC00B5025B /* NewTripViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTripViewModel.swift; sourceTree = "<group>"; };
 		9061403E25EE9A3A00B5025B /* ImageURL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageURL.swift; sourceTree = "<group>"; };
 		9061404125EEA99900B5025B /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
+		9098A65C25F3F9B000EAA7E2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		DD5A16948394A28812FDF2B2 /* Pods_Trip_Planner.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Trip_Planner.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -104,8 +100,8 @@
 		9025C2A225E0119100D1A964 /* Trip Planner */ = {
 			isa = PBXGroup;
 			children = (
+				9098A65C25F3F9B000EAA7E2 /* GoogleService-Info.plist */,
 				903B0B5025E979DB0083CEC0 /* Repositories */,
-				903B0AFA25E7C46C0083CEC0 /* GoogleService-Info.plist */,
 				9025C2C925E0186D00D1A964 /* Views */,
 				9025C2C525E017AA00D1A964 /* ViewModels */,
 				9025C2C025E0161800D1A964 /* Models */,
@@ -147,8 +143,6 @@
 		9025C2C525E017AA00D1A964 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
-				903B0B5725E97BA70083CEC0 /* TripsListViewModel.swift */,
-				9061402525EE4FDC00B5025B /* NewTripViewModel.swift */,
 				9061404125EEA99900B5025B /* ImagePicker.swift */,
 			);
 			path = ViewModels;
@@ -244,9 +238,9 @@
 			files = (
 				9025C2B325E0119400D1A964 /* LaunchScreen.storyboard in Resources */,
 				9025C2B025E0119400D1A964 /* Preview Assets.xcassets in Resources */,
+				9098A65D25F3F9B000EAA7E2 /* GoogleService-Info.plist in Resources */,
 				9025C2BD25E015F400D1A964 /* TripsData-pl-PL.json in Resources */,
 				9025C2AD25E0119400D1A964 /* Assets.xcassets in Resources */,
-				903B0AFB25E7C46C0083CEC0 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -301,7 +295,6 @@
 			files = (
 				9025C2C225E0162B00D1A964 /* Trip.swift in Sources */,
 				9025C2DB25E045AA00D1A964 /* TripDetails.swift in Sources */,
-				9061402625EE4FDC00B5025B /* NewTripViewModel.swift in Sources */,
 				903B0B5325E97B000083CEC0 /* TripRepository.swift in Sources */,
 				9025C2A425E0119100D1A964 /* AppDelegate.swift in Sources */,
 				9025C2D425E0191F00D1A964 /* TripInfo.swift in Sources */,
@@ -309,7 +302,6 @@
 				9025C2D825E02AB200D1A964 /* TripsList.swift in Sources */,
 				9044F26525E6BF6B00911CEA /* NewTrip.swift in Sources */,
 				9025C2A625E0119100D1A964 /* SceneDelegate.swift in Sources */,
-				903B0B5825E97BA70083CEC0 /* TripsListViewModel.swift in Sources */,
 				9061404225EEA99900B5025B /* ImagePicker.swift in Sources */,
 				9025C2AB25E0119100D1A964 /* Trip_Planner.xcdatamodeld in Sources */,
 			);

@@ -3,21 +3,21 @@
 <plist version="1.0">
 <dict>
 	<key>CLIENT_ID</key>
-	<string>261458914183-odj844qj1hd3a2ip0m0u21fl6ufc10hu.apps.googleusercontent.com</string>
+	<string>902461445171-5jeth34rht0jfd76iooit56sqdo94u3h.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.261458914183-odj844qj1hd3a2ip0m0u21fl6ufc10hu</string>
+	<string>com.googleusercontent.apps.902461445171-5jeth34rht0jfd76iooit56sqdo94u3h</string>
 	<key>API_KEY</key>
-	<string>AIzaSyDOiUM6wQJlA-OZxa24tq6izAA8WQHzcSg</string>
+	<string>AIzaSyB4H8a1XPqE9RWC3HJtm9Mm-ZsKMcoQyGk</string>
 	<key>GCM_SENDER_ID</key>
-	<string>261458914183</string>
+	<string>902461445171</string>
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
 	<string>com.michal.Trip-Planner</string>
 	<key>PROJECT_ID</key>
-	<string>trip-planner-c4add</string>
+	<string>trip-planner-v2-94981</string>
 	<key>STORAGE_BUCKET</key>
-	<string>trip-planner-c4add.appspot.com</string>
+	<string>trip-planner-v2-94981.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
 	<false></false>
 	<key>IS_ANALYTICS_ENABLED</key>
@@ -29,6 +29,6 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:261458914183:ios:21a3125855727992c5c122</string>
+	<string>1:902461445171:ios:cad7e59f0386c86b06ff46</string>
 </dict>
 </plist>
