@@ -9,16 +9,21 @@ import SwiftUI
 
 struct TripInfo: View {
     
+    @StateObject var repo = TripRepository()
+
     var trip: Trip
-    
     var body: some View {
         HStack{
-            Image(systemName: "pencil.circle.fill")
+            Image(uiImage: repo.downloadedImage)
                 .resizable()
-                .frame(width: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, height: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                .aspectRatio(contentMode: .fill)
+                .frame(width: 100, height: 100)
+                .clipped()
+                .onAppear(){
+                    repo.downloadPhoto(name: trip.imageName)
+                }
             VStack{
                 Text(trip.name)
-                Text(trip.description)
                 Text(trip.dateStartString + " - " + trip.dateEndString)
                 Text("To start \(trip.daysToStart) days")
             }
@@ -28,6 +33,6 @@ struct TripInfo: View {
 
 struct TripInfo_Previews: PreviewProvider {
     static var previews: some View {
-        TripInfo(trip: TripRepository().trips[0])
+        TripInfo(trip: Trip(id: "A", name: "Wycieczka", description: "Bardzo fajna wycieczka", imageName: "", dateStart: Date(), dateEnd: Date(), itemsList: ["item1", "item2"], activeItemsList: [true, false]))
     }
 }

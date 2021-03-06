@@ -8,6 +8,8 @@ target 'Trip Planner' do
   pod 'Firebase/Analytics'
   pod 'FirebaseFirestore'
   pod 'FirebaseFirestoreSwift'
+  pod 'Firebase/Core'
+  pod 'Firebase/Storage'
 
   # Pods for Trip Planner
 
