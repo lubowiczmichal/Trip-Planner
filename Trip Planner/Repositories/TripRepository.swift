@@ -26,14 +26,14 @@ class TripRepository: ObservableObject{
             newtrip.dateEnd = trip.dateStart
         }
         do {
-            let _ = try db.collection("a").addDocument(from: newtrip)
+            let _ = try db.collection("users/user1/trips").addDocument(from: newtrip)
         } catch let error {
             print(error)
         }
     }
     
     func loadData(){
-        db.collection("a").addSnapshotListener  { (querySnapshot, error) in
+        db.collection("users/user1/trips").addSnapshotListener  { (querySnapshot, error) in
             if let querySnapshot = querySnapshot {
                 self.trips = querySnapshot.documents.compactMap { document in
                     do{
@@ -50,24 +50,22 @@ class TripRepository: ObservableObject{
     }
     
     func updateDocument(trip: Trip){
-        db.collection("a").document(trip.id!).updateData([
+        db.collection("users/user1/trips").document(trip.id!).updateData([
             "activeItemsList": trip.activeItemsList,
             "itemsList": trip.itemsList
         ]){ err in
             if let err = err {
                 print("Error updating document: \(err)")
             } else {
-                print("Document successfully updated")
             }
         }
     }
     
     func deleteDocument(trip: Trip){
-        db.collection("a").document(trip.id!).delete() { err in
+        db.collection("users/user1/trips").document(trip.id!).delete() { err in
             if let err = err {
                 print("Error removing document: \(err)")
             } else {
-                print("Document successfully removed!")
             }
         }
     }
@@ -83,7 +81,6 @@ class TripRepository: ObservableObject{
             if let error = error{
                 print("Error \(error)")
             }
-            print("Put is complete and I got this back: \(String(describing: downloadMetadata))")
         }
     }
     
@@ -105,7 +102,6 @@ class TripRepository: ObservableObject{
           if let error = error {
             print(error)
           } else {
-            print("done")
           }
         }
     }

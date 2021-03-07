@@ -41,7 +41,7 @@ struct TripDetails: View {
                                     .cornerRadius(15, corners: .bottomRight)
                                 Text(trip.name)
                                     .font(.system(size: 25))
-                                    .foregroundColor(Color.red)
+                                    .foregroundColor(Color.blue)
                                     .padding(.vertical, 10)
                             }
                             Spacer()
@@ -50,9 +50,11 @@ struct TripDetails: View {
                     .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.width * 0.9)
                 }
                 Text(trip.description)
+                    .frame(width: UIScreen.main.bounds.width * 0.9, alignment: .leading)
+                    .padding()
                 if(!toPackClicked){
                     HStack{
-                        Text("Do spakowania")
+                        Text("Packing list")
                             .padding(10)
                         Spacer()
                         Button(action: {
@@ -112,9 +114,9 @@ struct TripDetails: View {
             }
         }
         .alert(isPresented: $showingAlert) {
-            Alert(title: Text("Are you sure you want to delete this?"),
-                message: Text("There is no undo"),
-                primaryButton: .cancel(Text("Anuluj")),
+            Alert(title: Text("Are you sure you want to delete this trip?"),
+                message: Text("Click Delete to confirm"),
+                primaryButton: .cancel(Text("Cancel")),
                 secondaryButton: .default(Text("Delete"), action: {
                     repo.deleteDocument(trip: trip)
                     presentationMode.wrappedValue.dismiss()
@@ -145,7 +147,7 @@ struct TripDetails: View {
 
 struct TripDetails_Previews: PreviewProvider {
     static var previews: some View {
-        TripDetails(trip: Trip(id: "A", name: "Wycieczka", description: "Bardzo fajna wycieczka", imageName: "", dateStart: Date(), dateEnd: Date(), itemsList: ["item1", "item2"], activeItemsList: [true, false]))
+        TripDetails(trip: TripRepository().trips[0])
     }
 }
 

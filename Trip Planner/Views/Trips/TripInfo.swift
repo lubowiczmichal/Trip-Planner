@@ -24,8 +24,12 @@ struct TripInfo: View {
                 }
             VStack{
                 Text(trip.name)
+                    .font(.system(size: 20))
+                    .multilineTextAlignment(.leading)
                 Text(trip.dateStartString + " - " + trip.dateEndString)
-                Text("To start \(trip.daysToStart) days")
+                    .font(.system(size: 15))
+                Text("\(trip.daysToStart) days left")
+                    .font(.system(size: 15))
             }
         }
     }
@@ -33,6 +37,6 @@ struct TripInfo: View {
 
 struct TripInfo_Previews: PreviewProvider {
     static var previews: some View {
-        TripInfo(trip: Trip(id: "A", name: "Wycieczka", description: "Bardzo fajna wycieczka", imageName: "", dateStart: Date(), dateEnd: Date(), itemsList: ["item1", "item2"], activeItemsList: [true, false]))
+        TripDetails(trip: TripRepository().trips[0])
     }
 }

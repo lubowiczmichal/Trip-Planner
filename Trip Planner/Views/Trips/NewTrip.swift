@@ -65,7 +65,7 @@ struct NewTrip: View {
                         ImagePicker(image: self.$inputImage)
                     })
                     HStack{
-                        Text("Nazwa")
+                        Text("Name")
                         Spacer()
                         TextField("", text: $name, onEditingChanged: { (editingChanged) in
                             if editingChanged {
@@ -80,10 +80,10 @@ struct NewTrip: View {
                                 .stroke(Color.gray, lineWidth: 1)
                         )
                     }
-                    DatePicker(selection: $dateStart, in:Date()..., displayedComponents: .date, label: { Text("Data wyjazdu") })
-                    DatePicker(selection: $dateEnd, in:dateStart..., displayedComponents: .date, label: { Text("Data powrotu") })
+                    DatePicker(selection: $dateStart, in:Date()..., displayedComponents: .date, label: { Text("Departure date") })
+                    DatePicker(selection: $dateEnd, in:dateStart..., displayedComponents: .date, label: { Text("Return date") })
                     HStack{
-                        Text("Opis")
+                        Text("Description")
                             .frame(height: 25)
                             .onAppear {
                                 isKeyboardActive()
@@ -98,7 +98,7 @@ struct NewTrip: View {
                                         .background(Color.blue)
                                         .cornerRadius(5)
                                         .frame(width: 90, height: 25)
-                                    Text("Zatwierdź")
+                                    Text("Confirm")
                                         .foregroundColor(.white)
                                 }
                             }
@@ -112,7 +112,7 @@ struct NewTrip: View {
                         )
                     if(!toPackClicked){
                         HStack{
-                            Text("Do spakowania")
+                            Text("Packing list")
                                 .padding(10)
                             Spacer()
                             Button(action: {
@@ -173,8 +173,8 @@ struct NewTrip: View {
                 }
             }
          .alert(isPresented: $showingAlert) {
-             Alert(title: Text("Brak nazwy"),
-                   message: Text("Wprowadź nazwę"),
+             Alert(title: Text("No name"),
+                   message: Text("Enter a name"),
                    dismissButton: .default(Text("OK")))
         }
     }
